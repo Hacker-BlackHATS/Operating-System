@@ -14,12 +14,12 @@ using namespace std;
 class Linux{
 	private:
 		int r, MB, p, q, GB;
-		struct sysinfo s1, utsname s2, statfs s3;
+		struct sysinfo s1; struct utsname s2; struct statfs s3;
 	public:
 		Linux(){
 			r = sysinfo(&s1);
 			q = uname(&s2);
-			p = statfs('/',&s3);
+			p = statfs("/",&s3);
 			MB = (1024*1024);
 			GB = (MB*1024);
 		}
